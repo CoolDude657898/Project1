@@ -94,12 +94,25 @@
         return $sanitized_email;
     }
 
+    function sanitize_radio_buttons($value){
+        $sanitized_radio_button = filter_var($value, FILTER_SANITIZE_STRING);
+    }
+
+
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
-        validate_email($_POST["email"]);
-        validate_radio_buttons($_POST["age"]);
-        validate_radio_buttons($_POST["recommendation"]);
+        if (validate_email($_POST["email"]) == TRUE){
+            $sanitized_email = sanitize_email($_POST["email"]);
+            echo $sanitized_email;
+        }
+        if(validate_radio_buttons($_POST["age"]) == TRUE){
+            $sanitized_age = sanitize_radio_buttons($_POST["age"]);
+        }
+        if (validate_radio_buttons($_POST["recommendation"]) == TRUE){
+            $sanitized_recommendation = sanitize_radio_buttons($_POST["recommendation"]);
+        }
         validate_options($_POST["gender"]);
         validate_numbers($_POST["times-purchased"]);
         validate_textarea($_POST["feedback"]);
