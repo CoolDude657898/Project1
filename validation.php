@@ -8,10 +8,12 @@
     An incorrect password: This password was tested to ensure that it rejected a wrong password
     */
     function check_password($hash){
-        if (password_verify($_POST["password"], $hash)){
-            return TRUE;
-        } else {
-            return FALSE;
+        if ($hash != NULL){
+            if (password_verify($_POST["password"], $hash)){
+                return TRUE;
+            } else {
+                return FALSE;
+            }
         }
     }
 
@@ -44,13 +46,29 @@
         }
     }
 
+    /*
+    Inputs tested with validate_options()
+        All options in the gender group were tested to ensure they are allowed to be passed through
+        A value was changed in inspect element to make sure that this function rejected any ones that are not in the array
+    */
+    function validate_options($value){
+        $valid_options_gender = array("male", "female", "nonbinary", "genderfluid", "agender", "other");
+        if ($value != NULL && in_array($value, $valid_options_gender)){
+            echo "Valid option input";
+        } else {
+            echo "Invalid option input";
+        }
+    }
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
         validate_email($_POST["email"]);
         validate_radio_buttons($_POST["age"]);
-        validate_radio_buttons($_POST["recommendation"])
+        validate_radio_buttons($_POST["recommendation"]);
+        validate_options($_POST["gender"]);
     } else {
+        echo "False";
         return FALSE;  
     }
 ?>
