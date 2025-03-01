@@ -58,6 +58,20 @@
         <input type="textarea" name="feedback" id="feedback">
         <label for="feedback">Give additional feedback here.</label>
 
+        <fieldset>
+            <legend>How likely are you to reccomend Pepsi products to family and friends?</legend>
+            <input type="radio" name="recommendation" id="very-unlikely" value="very-unlikely">
+            <label for="very-unlikely">Very Unlikely</label>
+            <input type="radio" name="recommendation" id="unlikely" value="unlikely">
+            <label for="unlikely">Unlikely</label>
+            <input type="radio" name="recommendation" id="unsure" value="unsure">
+            <label for="unsure">Unsure</label>
+            <input type="radio" name="recommendation" id="likely" value="likely">
+            <label for="likely">Likely</label>
+            <input type="radio" name="recommendation" id="very-likely" value="very-likely">
+            <label for="very-likely">Very Likely</label>
+        </fieldset>
+
         <button type="submit">Submit Form</button>
     </form>
     <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
