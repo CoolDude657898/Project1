@@ -25,9 +25,9 @@
     */
     function validate_email($email){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            echo "Valid email";
+            return TRUE;
         } else {
-            echo "Invalid email";
+            return FALSE;
         }
     }
 
@@ -40,9 +40,9 @@
         $valid_radio_buttons_age = array("0-12", "13-17", "18-22", "23-27", "28-32", "33-37", "38-42", "43-47", "48-52", "53-57", "58-62", "63-67", "68+");
         $valid_radio_buttons_recommendation = array("very-unlikely", "unlikely", "unsure", "likely", "very-likely");
         if ($value != NULL && (in_array($value, $valid_radio_buttons_age) || in_array($value, $valid_radio_buttons_recommendation))){
-            echo "Valid radio button input";
+            return TRUE;
         } else {
-            echo "Invalid radio button input";
+            return FALSE;
         }
     }
 
@@ -54,9 +54,9 @@
     function validate_options($value){
         $valid_options_gender = array("male", "female", "nonbinary", "genderfluid", "agender", "other");
         if ($value != NULL && in_array($value, $valid_options_gender)){
-            echo "Valid option input";
+            return TRUE;
         } else {
-            echo "Invalid option input";
+            return FALSE;
         }
     }
 
@@ -70,9 +70,9 @@
     */
     function validate_numbers($value){
         if (ctype_digit($value)){
-            echo "Valid number input";
+            return TRUE;
         } else {
-            echo "Invalid number input";
+            return FALSE;
         }
     }
 
@@ -83,14 +83,15 @@
     */
     function validate_textarea($value){
         if ($value != NULL){
-            echo "Valid textarea input";
+            return TRUE;
         } else {
-            echo "Invalid textarea input";
+            return FALSE;
         }
     }
 
     function sanitize_email($email){
-
+        $sanitized_email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        return $sanitized_email;
     }
 
     $valid_password = check_password($global_password);
