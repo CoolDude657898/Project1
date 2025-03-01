@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Survey: Survey Name</title>  <!-- TODO: Change "Survey Name" to the topic of your survey -->
+        <link rel="stylesheet" href="form.css">
     </head>
     <body>
     <!-- TODO: Fix all bugs/poor practice in the form -->
