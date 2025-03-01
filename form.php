@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Survey: Survey Name</title>  <!-- TODO: Change "Survey Name" to the topic of your survey -->
+        <title>Pepsi Customer Survey</title>  <!-- TODO: Change "Survey Name" to the topic of your survey -->
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
@@ -56,6 +56,13 @@
 
         <button type="submit">Submit Form</button>
     </form>
-<!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
+    <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
+
+    <?php
+        $global_password = "$2y$10$1LMJzcMfxMDPtSSB8skhN.5ywWcdtpcs0rHzLXCh9nYKEC/KuTJRO";
+
+
+    ?>
+
     </body>
 </html>
