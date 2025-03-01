@@ -60,6 +60,14 @@
         }
     }
 
+    function validate_numbers($value){
+        if (is_numeric($value)){
+            echo "Valid number input";
+        } else {
+            echo "Invalid number input";
+        }
+    }
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
@@ -67,6 +75,7 @@
         validate_radio_buttons($_POST["age"]);
         validate_radio_buttons($_POST["recommendation"]);
         validate_options($_POST["gender"]);
+        validate_numbers($_POST["times-purchased"])
     } else {
         echo "False";
         return FALSE;  

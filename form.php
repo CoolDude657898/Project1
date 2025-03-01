@@ -52,7 +52,7 @@
             <option value="other">Choose not to say/Other</option>
         </select>
 
-        <label for="times-purchased-id">How many times would you estimate you have purchased a pepsi product in the last 6 months? Enter a number.</label>
+        <label for="times-purchased">How many times would you estimate you have purchased a pepsi product in the last 6 months? Enter a number.</label>
         <input type="number" name="times-purchased" id="times-purchased">
 
         <label for="feedback">Give additional feedback here.</label>
