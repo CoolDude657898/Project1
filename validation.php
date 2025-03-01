@@ -33,8 +33,8 @@
 
     /*
     Inputs tested with validate_radio_buttons()
-        All radio buttons in the age & pepsi recommendation fieldsets were tested to ensure that each one was allowed through
-        Then through inspect element I changed one of the values and submitted it to ensure it would not get let through
+    All radio buttons in the age & pepsi recommendation fieldsets were tested to ensure that each one was allowed through
+    Then through inspect element I changed one of the values and submitted it to ensure it would not get let through
     */
     function validate_radio_buttons($value){
         $valid_radio_buttons_age = array("0-12", "13-17", "18-22", "23-27", "28-32", "33-37", "38-42", "43-47", "48-52", "53-57", "58-62", "63-67", "68+");
@@ -63,7 +63,7 @@
     /* 
     Inputs tested with validate_numbers()
     213: This input was tested to ensure numbers were allowed through
-    The following inputs were tested to ensure no non numbers were allowed through:
+    The following inputs were tested by changing the input type in inspect element to ensure no non numbers were allowed through:
     2_13
     213$a
     $a
@@ -76,6 +76,19 @@
         }
     }
 
+    /*
+    Inputs tested with validate_textarea()
+    No input: This input was tested to ensure that an empty answer does not get through
+    "Feeback": This input was tested to ensure that a non-empty answer can get through
+    */
+    function validate_textarea($value){
+        if ($value != NULL){
+            echo "Valid textarea input";
+        } else {
+            echo "Invalid textarea input";
+        }
+    }
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
@@ -84,6 +97,7 @@
         validate_radio_buttons($_POST["recommendation"]);
         validate_options($_POST["gender"]);
         validate_numbers($_POST["times-purchased"]);
+        validate_textarea($_POST["feedback"]);
     } else {
         echo "False";
         return FALSE;  
