@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pepsi Customer Survey</title>  <!-- TODO: Change "Survey Name" to the topic of your survey -->
+        <title>Pepsi Customer Survey</title>
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
