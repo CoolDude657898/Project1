@@ -44,12 +44,12 @@
 
         <label for="gender">What is your gender?</label>
         <select name="gender" id="gender">
-            <option value="m">Male</option>
-            <option value="f">Female</option>
-            <option value="nb">Nonbinary</option>
-            <option value="gf">Genderfluid</option>
-            <option value="a">Agender</option>
-            <option value="o">Choose not to say/Other</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="nonbinary">Nonbinary</option>
+            <option value="genderfluid">Genderfluid</option>
+            <option value="agender">Agender</option>
+            <option value="other">Choose not to say/Other</option>
         </select>
     <!-- TODO: Add your own survey questions -->
     </form>
