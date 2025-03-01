@@ -48,8 +48,8 @@
 
     /*
     Inputs tested with validate_options()
-        All options in the gender group were tested to ensure they are allowed to be passed through
-        A value was changed in inspect element to make sure that this function rejected any ones that are not in the array
+    All options in the gender group were tested to ensure they are allowed to be passed through
+    A value was changed in inspect element to make sure that this function rejected any ones that are not in the array
     */
     function validate_options($value){
         $valid_options_gender = array("male", "female", "nonbinary", "genderfluid", "agender", "other");
@@ -60,6 +60,14 @@
         }
     }
 
+    /* 
+    Inputs tested with validate_numbers()
+    213: This input was tested to ensure numbers were allowed through
+    The following inputs were tested to ensure no non numbers were allowed through:
+    2_13
+    213$a
+    $a
+    */
     function validate_numbers($value){
         if (is_numeric($value)){
             echo "Valid number input";
@@ -75,7 +83,7 @@
         validate_radio_buttons($_POST["age"]);
         validate_radio_buttons($_POST["recommendation"]);
         validate_options($_POST["gender"]);
-        validate_numbers($_POST["times-purchased"])
+        validate_numbers($_POST["times-purchased"]);
     } else {
         echo "False";
         return FALSE;  
