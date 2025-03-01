@@ -13,7 +13,7 @@
         <input type="text" name="pw-name" id="pw-id">
 
         <fieldset>
-            <label>What age are you? </label>
+            <legend>What age are you? </legend>
             <input type="radio" name="age" id="0-12">
             <label>0-12 </label>
             <input type="radio" name="age" id="13-17">
