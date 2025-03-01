@@ -14,31 +14,31 @@
 
         <fieldset>
             <label>What age are you? </label>
-            <input type="radio" name="0" id="1">
+            <input type="radio" name="age" id="0-12">
             <label>0-12 </label>
-            <input type="radio" name="1" id="1">
+            <input type="radio" name="age" id="13-17">
             <label>13-17 </label>
-            <input type="radio" name="2" id="1">
+            <input type="radio" name="age" id="18-22">
             <label>18-22 </label>
-            <input type="radio" name="3" id="1">
+            <input type="radio" name="age" id="23-27">
             <label>23-27 </label>
-            <input type="radio" name="4" id="1">
+            <input type="radio" name="age" id="28-32">
             <label>28-32 </label>
-            <input type="radio" name="5" id="1">
+            <input type="radio" name="age" id="33-37">
             <label>33-37 </label>
-            <input type="radio" name="6" id="1">
+            <input type="radio" name="age" id="38-42">
             <label>38-42 </label>
-            <input type="radio" name="7" id="1">
+            <input type="radio" name="age" id="43-47">
             <label>43-47 </label>
-            <input type="radio" name="8" id="1">
+            <input type="radio" name="age" id="48-52">
             <label>48-52 </label>
-            <input type="radio" name="9" id="1">
+            <input type="radio" name="age" id="53-57">
             <label>53-57 </label>
-            <input type="radio" name="10" id="1">
+            <input type="radio" name="age" id="58-62">
             <label>58-62 </label>
-            <input type="radio" name="11" id="1">
+            <input type="radio" name="age" id="63-67">
             <label>63-67 </label>
-            <input type="radio" name="12" id="1">
+            <input type="radio" name="age" id="68+">
             <label>68+ </label>
         </fieldset>
 
