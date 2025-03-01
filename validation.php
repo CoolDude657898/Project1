@@ -69,7 +69,7 @@
     $a
     */
     function validate_numbers($value){
-        if (is_numeric($value)){
+        if (ctype_digit($value)){
             echo "Valid number input";
         } else {
             echo "Invalid number input";
@@ -87,6 +87,10 @@
         } else {
             echo "Invalid textarea input";
         }
+    }
+
+    function sanitize_email($email){
+
     }
 
     $valid_password = check_password($global_password);
