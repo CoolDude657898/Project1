@@ -51,7 +51,7 @@
             <option value="agender">Agender</option>
             <option value="other">Choose not to say/Other</option>
         </select>
-        
+
         <label for="times-purchased-id">How many times would you estimate you have purchased a pepsi product in the last 6 months? Enter a number.</label>
         <input type="number" name="times-purchased" id="times-purchased">
 
@@ -74,12 +74,17 @@
 
         <button type="submit">Submit Form</button>
     </form>
-    <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
 
     <?php
-        $global_password = "$2y$10$1LMJzcMfxMDPtSSB8skhN.5ywWcdtpcs0rHzLXCh9nYKEC/KuTJRO";
+        $global_password = "$2y$10\$Xwkg50Z3swtLoSUVLI6X3uq4kfexU6oeaiR/Z.ptFbB0DjmloKOca";
 
-
+        function check_password(){
+            if (password_verify($_POST["password"], $global_password)){
+                return TRUE;
+            } else {
+                return FALSE;
+            }
+        }
     ?>
 
     </body>
