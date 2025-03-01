@@ -10,7 +10,7 @@
         <input type="email" name="email-name" id="email-id">
 
         <label for="pw-id">Enter your password: </label>
-        <input type="text" name="pw-name" id="pw-id">
+        <input type="password" name="pw-name" id="pw-id">
 
         <fieldset>
             <legend>What age are you? </legend>
