@@ -104,6 +104,16 @@
         return $sanitized_option;
     }
 
+    function sanitize_numbers($value){
+        $sanitized_number = filter_var($value, FILTER_SANITIZE_NUMBER_INT);
+        return $sanitized_number;
+    }
+
+    function sanitize_text($value){
+        $sanitized_text = filter_var($value, FILTER_SANITIZE_STRING);
+        return $sanitized_text;
+    }
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
@@ -123,8 +133,14 @@
             $sanitized_option = sanitize_options($_POST["gender"]);
             echo $sanitized_option;
         }
-        validate_numbers($_POST["times-purchased"]);
-        validate_textarea($_POST["feedback"]);
+        if (validate_numbers($_POST["times-purchased"]) == TRUE){
+            $sanitized_number = sanitize_numbers($_POST["times-purchased"]);
+            echo $sanitized_number;
+        }
+        if(validate_textarea($_POST["feedback"]) == TRUE){
+            $sanitized_text = sanitize_text($_POST["feedback"]);
+            echo $sanitized_text;
+        }
     } else {
         echo "False";
         return FALSE;  
