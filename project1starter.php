@@ -12,33 +12,35 @@
         <label for="pw-id">Enter your password: </label>
         <input type="text" name="pw-name" id="pw-id">
 
-        <label>What age are you? </label>
-        <input type="radio" name="0" id="1">
-        <label>0-12 </label>
-        <input type="radio" name="1" id="1">
-        <label>13-17 </label>
-        <input type="radio" name="2" id="1">
-        <label>18-22 </label>
-        <input type="radio" name="3" id="1">
-        <label>23-27 </label>
-        <input type="radio" name="4" id="1">
-        <label>28-32 </label>
-        <input type="radio" name="5" id="1">
-        <label>33-37 </label>
-        <input type="radio" name="6" id="1">
-        <label>38-42 </label>
-        <input type="radio" name="7" id="1">
-        <label>43-47 </label>
-        <input type="radio" name="8" id="1">
-        <label>48-52 </label>
-        <input type="radio" name="9" id="1">
-        <label>53-57 </label>
-        <input type="radio" name="10" id="1">
-        <label>58-62 </label>
-        <input type="radio" name="11" id="1">
-        <label>63-67 </label>
-        <input type="radio" name="12" id="1">
-        <label>68+ </label>
+        <fieldset>
+            <label>What age are you? </label>
+            <input type="radio" name="0" id="1">
+            <label>0-12 </label>
+            <input type="radio" name="1" id="1">
+            <label>13-17 </label>
+            <input type="radio" name="2" id="1">
+            <label>18-22 </label>
+            <input type="radio" name="3" id="1">
+            <label>23-27 </label>
+            <input type="radio" name="4" id="1">
+            <label>28-32 </label>
+            <input type="radio" name="5" id="1">
+            <label>33-37 </label>
+            <input type="radio" name="6" id="1">
+            <label>38-42 </label>
+            <input type="radio" name="7" id="1">
+            <label>43-47 </label>
+            <input type="radio" name="8" id="1">
+            <label>48-52 </label>
+            <input type="radio" name="9" id="1">
+            <label>53-57 </label>
+            <input type="radio" name="10" id="1">
+            <label>58-62 </label>
+            <input type="radio" name="11" id="1">
+            <label>63-67 </label>
+            <input type="radio" name="12" id="1">
+            <label>68+ </label>
+        </fieldset>
 
         <select name="gender" id="gender">
             <option value="m">Male</option>
