@@ -29,10 +29,27 @@
         }
     }
 
+    /*
+    Inputs tested with validate_radio_buttons()
+        All radio buttons in the age & pepsi recommendation fieldsets were tested to ensure that each one was allowed through
+        Then through inspect element I changed one of the values and submitted it to ensure it would not get let through
+    */
+    function validate_radio_buttons($value){
+        $valid_radio_buttons_age = array("0-12", "13-17", "18-22", "23-27", "28-32", "33-37", "38-42", "43-47", "48-52", "53-57", "58-62", "63-67", "68+");
+        $valid_radio_buttons_recommendation = array("very-unlikely", "unlikely", "unsure", "likely", "very-likely");
+        if ($value != NULL && (in_array($value, $valid_radio_buttons_age) || in_array($value, $valid_radio_buttons_recommendation))){
+            echo "Valid radio button input";
+        } else {
+            echo "Invalid radio button input";
+        }
+    }
+
     $valid_password = check_password($global_password);
 
     if ($valid_password == TRUE){
         validate_email($_POST["email"]);
+        validate_radio_buttons($_POST["age"]);
+        validate_radio_buttons($_POST["recommendation"])
     } else {
         return FALSE;  
     }
