@@ -5,7 +5,6 @@
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
-    <!-- TODO: Fix all bugs/poor practice in the form -->
     <form action="submitted.php" method="post" class="survey">
         <label for="email">Enter your email: </label>
         <input type="email" name="email" id="email">
@@ -56,7 +55,8 @@
         <input type="number" name="times-purchased" id="times-purchased">
         <label for="times-purchased-id">How many times would you estimate you have purchased a pepsi product in the last 6 months? Enter a number.</label>
 
-        <input type="text" name="feedback" id="feedback">
+        <input type="textarea" name="feedback" id="feedback">
+        <label for="feedback">Give additional feedback here.</label>
 
         <button type="submit">Submit Form</button>
     </form>
