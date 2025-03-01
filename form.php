@@ -78,6 +78,5 @@
     <?php
         include "validation.php";
     ?>
-
     </body>
 </html>
