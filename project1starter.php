@@ -5,7 +5,7 @@
     </head>
     <body>
     <!-- TODO: Fix all bugs/poor practice in the form -->
-    <form action="" method="post" class="survey">
+    <form action="submitted.php" method="post" class="survey">
         <label for="email-id">Enter your email: </label>
         <input type="email" name="email-name" id="email-id">
 
