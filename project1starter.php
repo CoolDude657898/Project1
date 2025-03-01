@@ -52,6 +52,8 @@
             <option value="other">Choose not to say/Other</option>
         </select>
     <!-- TODO: Add your own survey questions -->
+
+        <button type="submit">Submit Form</button>
     </form>
 <!-- TODO: All the backend PHP/SQL stuff! (you may need a separate file for this!) -->
     </body>
