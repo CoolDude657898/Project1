@@ -19,7 +19,7 @@
 
     $valid_password = check_password($global_password);
 
-    if ($valid_password) == TRUE{
+    if ($valid_password == TRUE){
         return TRUE;
     } else {
         return FALSE;  
