@@ -1,6 +1,4 @@
 <?php
-    $global_password = "\$2y\$10\$ccqRtReEc0Aaqc9HV2CtA.xsz4fnRdKy54Ox5x4zX/RYsWQLYnkwy";
-
     /*
     Inputs tested with check_password()
 
@@ -79,7 +77,7 @@
     /*
     Inputs tested with validate_textarea()
     No input: This input was tested to ensure that an empty answer does not get through
-    "Feeback": This input was tested to ensure that a non-empty answer can get through
+    "Feedback": This input was tested to ensure that a non-empty answer can get through
     */
     function validate_textarea($value){
         if ($value != NULL){
@@ -116,7 +114,7 @@
 
     $valid_password = check_password($global_password);
 
-    if ($valid_password == TRUE){
+    function sanitize_all_data(){
         if (validate_email($_POST["email"]) == TRUE){
             $sanitized_email = sanitize_email($_POST["email"]);
             echo $sanitized_email;
@@ -141,8 +139,5 @@
             $sanitized_text = sanitize_text($_POST["feedback"]);
             echo $sanitized_text;
         }
-    } else {
-        echo "False";
-        return FALSE;  
     }
 ?>

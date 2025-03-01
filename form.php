@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
-    <form action="validation.php" method="post" class="survey">
+    <form action="submitted.php" method="post" class="survey">
         <label for="email">Enter your email: </label>
         <input type="email" name="email" id="email">
 
