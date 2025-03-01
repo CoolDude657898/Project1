@@ -7,11 +7,11 @@
     <body>
     <!-- TODO: Fix all bugs/poor practice in the form -->
     <form action="submitted.php" method="post" class="survey">
-        <label for="email-id">Enter your email: </label>
-        <input type="email" name="email-name" id="email-id">
+        <label for="email">Enter your email: </label>
+        <input type="email" name="email" id="email">
 
-        <label for="pw-id">Enter your password: </label>
-        <input type="password" name="pw-name" id="pw-id">
+        <label for="password">Enter your password: </label>
+        <input type="password" name="password" id="password">
 
         <fieldset>
             <legend>What age are you? </legend>
@@ -53,8 +53,10 @@
             <option value="other">Choose not to say/Other</option>
         </select>
     <!-- TODO: Add your own survey questions -->
-        <input type="number" name="times-purchased-name" id="times-purchased-id">
+        <input type="number" name="times-purchased" id="times-purchased">
         <label for="times-purchased-id">How many times would you estimate you have purchased a pepsi product in the last 6 months? Enter a number.</label>
+
+        <input type="text" name="feedback" id="feedback">
 
         <button type="submit">Submit Form</button>
     </form>
