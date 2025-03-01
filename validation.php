@@ -99,7 +99,10 @@
         return $sanitized_radio_button;
     }
 
-
+    function sanitize_options($value){
+        $sanitized_option = filter_var($value, FILTER_SANITIZE_STRING);
+        return $sanitized_option;
+    }
 
     $valid_password = check_password($global_password);
 
@@ -110,11 +113,16 @@
         }
         if(validate_radio_buttons($_POST["age"]) == TRUE){
             $sanitized_age = sanitize_radio_buttons($_POST["age"]);
+            echo $sanitized_age;
         }
         if (validate_radio_buttons($_POST["recommendation"]) == TRUE){
             $sanitized_recommendation = sanitize_radio_buttons($_POST["recommendation"]);
+            echo $sanitized_recommendation;
         }
-        validate_options($_POST["gender"]);
+        if (validate_options($_POST["gender"]) == TRUE){
+            $sanitized_option = sanitize_options($_POST["gender"]);
+            echo $sanitized_option;
+        }
         validate_numbers($_POST["times-purchased"]);
         validate_textarea($_POST["feedback"]);
     } else {
