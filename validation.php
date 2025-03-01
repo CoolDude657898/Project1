@@ -9,5 +9,19 @@
         }
     }
 
-    check_password($global_password);
+    function validate_email($email){
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            echo "Valid email";
+        } else {
+            echo "Invalid email";
+        }
+    }
+
+    $valid_password = check_password($global_password);
+
+    if ($valid_password) == TRUE{
+        return TRUE;
+    } else {
+        return FALSE;  
+    }
 ?>
