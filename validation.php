@@ -96,6 +96,7 @@
 
     function sanitize_radio_buttons($value){
         $sanitized_radio_button = filter_var($value, FILTER_SANITIZE_STRING);
+        return $sanitized_radio_button;
     }
 
 
