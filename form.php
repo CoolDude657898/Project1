@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
-    <form action="submitted.php" method="post" class="survey">
+    <form action="validation.php" method="post" class="survey">
         <label for="email">Enter your email: </label>
         <input type="email" name="email" id="email">
 
@@ -76,15 +76,7 @@
     </form>
 
     <?php
-        $global_password = "$2y$10\$Xwkg50Z3swtLoSUVLI6X3uq4kfexU6oeaiR/Z.ptFbB0DjmloKOca";
-
-        function check_password(){
-            if (password_verify($_POST["password"], $global_password)){
-                return TRUE;
-            } else {
-                return FALSE;
-            }
-        }
+        include "validation.php";
     ?>
 
     </body>
