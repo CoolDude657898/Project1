@@ -6,7 +6,7 @@
     <body>
     <!-- TODO: Fix all bugs/poor practice in the form -->
     <form action="" method="post" class="survey">
-        <label>Enter your email: </label>
+        <label for="email-id">Enter your email: </label>
         <input type="email" name="email-name" id="email-id">
 
         <label for="pw-id">Enter your password: </label>
