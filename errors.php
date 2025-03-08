@@ -5,5 +5,7 @@ error_reporting(E_ALL);
 
 include("validation.php");
 include("submitted.php");
+include("dbconfig.php");
+include("form.php");
 
 ?>

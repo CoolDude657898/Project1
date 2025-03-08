@@ -163,32 +163,32 @@
         if (validate_email($_POST["email"]) == TRUE){
             $sanitized_email = sanitize_email($_POST["email"]);
             $data["email"] = $sanitized_email;
-            echo $sanitized_email;
+            # echo $sanitized_email;
         }
         if(validate_radio_buttons($_POST["age"]) == TRUE){
             $sanitized_age = sanitize_radio_buttons($_POST["age"]);
             $data["age"] = $sanitized_age;
-            echo $sanitized_age;
+            # echo $sanitized_age;
         }
         if (validate_radio_buttons($_POST["recommendation"]) == TRUE){
             $sanitized_recommendation = sanitize_radio_buttons($_POST["recommendation"]);
             $data["recommendation"] = $sanitized_recommendation;
-            echo $sanitized_recommendation;
+            # echo $sanitized_recommendation;
         }
         if (validate_options($_POST["gender"]) == TRUE){
             $sanitized_gender = sanitize_options($_POST["gender"]);
             $data["gender"] = $sanitized_gender;
-            echo $sanitized_gender;
+            # echo $sanitized_gender;
         }
         if (validate_numbers($_POST["times-purchased"]) == TRUE){
             $sanitized_times_purchased = sanitize_numbers($_POST["times-purchased"]);
             $data["times_purchased"] = $sanitized_times_purchased;
-            echo $sanitized_times_purchased;
+            # echo $sanitized_times_purchased;
         }
         if(validate_textarea($_POST["feedback"]) == TRUE){
             $sanitized_feedback = sanitize_text($_POST["feedback"]);
             $data["feedback"] = $sanitized_feedback;
-            echo $sanitized_feedback;
+            # echo $sanitized_feedback;
         }
 
         return $data;
