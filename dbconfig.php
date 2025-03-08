@@ -9,4 +9,5 @@ function connectDB(){
         $db = new PDO("mysql:host=$host;dbname=$database", $user, $pass);
         }
     catch (PDOException $e) {echo $e;}
-    return $db; } ?>
+    return $db; }
+?>

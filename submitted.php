@@ -9,15 +9,24 @@
 
         <?php
             include "validation.php";
-            require('dbconfig.php');
-
-            $db = connectDB();
 
             $global_password = "\$2y\$10\$ccqRtReEc0Aaqc9HV2CtA.xsz4fnRdKy54Ox5x4zX/RYsWQLYnkwy";
             $valid_password = check_password($global_password);
 
             if ($valid_password == TRUE){
+                require('dbconfig.php');
+                $db = connectDB();
+
                 $data = sanitize_all_data();
+                $email = $data["email"];
+                $age = $data["age"];
+                $recommendation = $data["recommendation"];
+                $gender = $data["gender"];
+                $times_purchased = $data["times_purchased"];
+                $feedback = $data["feedback"];
+
+                $prepared_statement = $db->prepare("INSERT INTO pepsi_survey (email, age, gender, times_purchased, recommendation, feedback) VALUES (?, ?, ?, ?, ?, ?);");
+                $prepared_statement->execute(array($email, $age, $gender, $times_purchased, $recommendation, $feedback));
                 echo "<p>Your survey has been submitted! Thank you for taking time to take this survey. We value your feedback!</p>";
             } else {
                 echo "<p>Invalid Password</p>";
