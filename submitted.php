@@ -6,7 +6,8 @@
     </head>
 
     <body>
-
+        <a href="datapage.php">View all results of form from everyone who took it</a>
+        
         <?php
             include "validation.php";
 

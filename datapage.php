@@ -9,7 +9,19 @@
 
     <body>
         <?php
+            function getDataFromDatabase(){
+                require('dbconfig.php');
+                $db = connectDB();
+                $select_prepared_statement = $db->prepare("SELECT * FROM pepsi_survey;");
+                $select_prepared_statement->execute();
+                $rows = $select_prepared_statement->fetchAll();
+                
+                foreach ($rows as $row){
+                    
+                }
+            }
 
+            getDataFromDatabase();
         ?>
     </body>
 </html>
