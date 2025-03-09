@@ -89,6 +89,46 @@
                 }
             }
 
+            function displayAverageTimesPurchased($times_purchased_array){
+                $total_times_purchased = 0;
+                $amount_of_data = count($times_purchased_array);
+
+                foreach($times_purchased_array as $times_purchased){
+                    if($times_purchased < 100){
+                        $total_times_purchased = $total_times_purchased + $times_purchased;
+                    }
+                }
+
+                $average_times_purchased = $total_times_purchased / $amount_of_data;
+                echo "<p>Average times purchased within last 6 months: $average_times_purchased</p>";
+            }
+
+            function displayRecommendationTotals($recommendation_array){
+                echo "<p>Recommendation totals:\n";
+                $recommendation_totals_array = array(0, 0, 0, 0, 0);
+
+                foreach($recommendation_array as $recommendation){
+                    switch($recommendation){
+                        case "very-unlikely": $recommendation_totals_array[0]++; break;
+                        case "unlikely": $recommendation_totals_array[1]++; break;
+                        case "unsure": $recommendation_totals_array[2]++; break;
+                        case "likely": $recommendation_totals_array[3]++; break;
+                        case "very-likely": $recommendation_totals_array[4]++; break;
+                    }
+                }
+
+                for($i = 0; $i < 5; $i++){
+                    switch($i){
+                        case 0: echo "<p>Very unlikely: $recommendation_totals_array[0]\n</p>"; break;
+                        case 1: echo "<p>Unlikely: $recommendation_totals_array[1]\n</p>"; break;
+                        case 2: echo "<p>Unsure: $recommendation_totals_array[2]\n</p>"; break;
+                        case 3: echo "<p>Likely: $recommendation_totals_array[3]\n</p>"; break;
+                        case 4: echo "<p>Very likely: $recommendation_totals_array[4]\n</p>"; break;
+                    }
+                }
+            }
+            
+
             function displayData(){
                 require('dbconfig.php');
                 $db = connectDB();
@@ -114,6 +154,8 @@
 
                 displayAgeTotals($age_array);
                 displayGenderTotals($gender_array);
+                displayAverageTimesPurchased($times_purchased_array);
+                displayRecommendationTotals($recommendation_array);
             }
 
             displayData();
