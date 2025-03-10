@@ -127,7 +127,25 @@
                     }
                 }
             }
-            
+
+            function displayRandomFeedback($feedback_array){
+                if(count($feedback_array) <= 3){
+                    echo "<p>Additional feedback: </p>";
+                    foreach($feedback_array as $feedback){
+                        echo "$feedback\n";
+                    }
+                } else {
+                    echo "<p>Some additional feedback given: </p>";
+                    $random_feedback_indices = array_rand($feedback_array, 3);
+                    $feedback_one = $feedback_array[$random_feedback_indices[0]];
+                    $feedback_two = $feedback_array[$random_feedback_indices[1]];
+                    $feedback_three = $feedback_array[$random_feedback_indices[2]];
+                    echo "<p>$feedback_one\n</p>";
+                    echo "<p>$feedback_two\n</p>";
+                    echo "<p>$feedback_three\n</p>";
+                }
+            }
+
 
             function displayData(){
                 require('dbconfig.php');
@@ -144,18 +162,36 @@
                 $recommendation_array = array();
                 
                 foreach ($rows as $row){
-                    array_push($email_array, $row["email"]);
-                    array_push($age_array, $row["age"]);
-                    array_push($gender_array, $row["gender"]);
-                    array_push($times_purchased_array, $row["times_purchased"]);
-                    array_push($feedback_array, $row["feedback"]);
-                    array_push($recommendation_array, $row["recommendation"]);
+                    if($row["email"] != NULL){
+                        array_push($email_array, $row["email"]);
+                    }
+
+                    if($row["age"] != NULL){
+                        array_push($age_array, $row["age"]);
+                    }
+
+                    if($row["gender"] != NULL){
+                        array_push($gender_array, $row["gender"]);
+                    }
+
+                    if($row["times_purchased" != NULL]){
+                        array_push($times_purchased_array, $row["times_purchased"]);
+                    }
+
+                    if($row["feedback"] != NULL){
+                        array_push($feedback_array, $row["feedback"]);
+                    }
+
+                    if($row["recommendation"] != NULL){
+                        array_push($recommendation_array, $row["recommendation"]);
+                    }
                 }
 
                 displayAgeTotals($age_array);
                 displayGenderTotals($gender_array);
                 displayAverageTimesPurchased($times_purchased_array);
                 displayRecommendationTotals($recommendation_array);
+                displayRandomFeedback($feedback_array);
             }
 
             displayData();
