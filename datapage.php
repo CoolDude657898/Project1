@@ -132,7 +132,7 @@
                 if(count($feedback_array) <= 3){
                     echo "<p>Additional feedback: </p>";
                     foreach($feedback_array as $feedback){
-                        echo "$feedback\n";
+                        echo "<p>$feedback\n</p>";
                     }
                 } else {
                     echo "<p>Some additional feedback given: </p>";
@@ -146,6 +146,23 @@
                 }
             }
 
+            function displayRandomEmails($email_array){
+                if(count($email_array) <= 3){
+                    echo "<p>Emails used in survey: </p>";
+                    foreach($email_array as $email){
+                        echo "<p>$email\n</p>";
+                    }
+                } else {
+                    echo "<p>Some of the emails used in the survey: </p>";
+                    $random_email_indices = array_rand($email_array, 3);
+                    $email_one = $email_array[$random_email_indices[0]];
+                    $email_two = $email_array[$random_email_indices[1]];
+                    $email_three = $email_array[$random_email_indices[2]];
+                    echo "<p>$email_one\n</p>";
+                    echo "<p>$email_two\n</p>";
+                    echo "<p>$email_three\n</p>";
+                }
+            }
 
             function displayData(){
                 require('dbconfig.php');
@@ -192,6 +209,7 @@
                 displayAverageTimesPurchased($times_purchased_array);
                 displayRecommendationTotals($recommendation_array);
                 displayRandomFeedback($feedback_array);
+                displayRandomEmails($email_array);
             }
 
             displayData();
