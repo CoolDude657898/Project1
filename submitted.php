@@ -12,13 +12,13 @@
             include "validation.php";
 
             $global_password = "\$2y\$10\$ccqRtReEc0Aaqc9HV2CtA.xsz4fnRdKy54Ox5x4zX/RYsWQLYnkwy";
-            $valid_password = check_password($global_password);
+            $valid_password = checkPassword($global_password);
 
             if ($valid_password == TRUE){
                 require('dbconfig.php');
                 $db = connectDB();
 
-                $data = sanitize_all_data();
+                $data = sanitizeAllData();
                 $email = $data["email"];
                 $age = $data["age"];
                 $recommendation = $data["recommendation"];

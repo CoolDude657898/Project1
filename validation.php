@@ -14,7 +14,7 @@
     Correct password: This password was tested to ensure that it accepted the correct password
     An incorrect password: This password was tested to ensure that it rejected a wrong password
     */
-    function check_password($hash){
+    function checkPassword($hash){
         if ($hash != NULL){
             if (password_verify($_POST["password"], $hash)){
                 return TRUE;
@@ -32,7 +32,7 @@
     testemail@gmail.com: This was chosen to ensure that it accepted a valid email
     testemail@gmail: This was chosen to ensure that it did not accept a format without the .com (or other similar like .net)
     */
-    function validate_email($email){
+    function validateEmail($email){
         if(filter_var($email, FILTER_VALIDATE_EMAIL)){
             return TRUE;
         } else {
@@ -49,7 +49,7 @@
     All radio buttons in the age & pepsi recommendation fieldsets were tested to ensure that each one was allowed through
     Then through inspect element I changed one of the values and submitted it to ensure it would not get let through
     */
-    function validate_radio_buttons($value){
+    function validateRadioButtons($value){
         $valid_radio_buttons_age = array("0-12", "13-17", "18-22", "23-27", "28-32", "33-37", "38-42", "43-47", "48-52", "53-57", "58-62", "63-67", "68+");
         $valid_radio_buttons_recommendation = array("very-unlikely", "unlikely", "unsure", "likely", "very-likely");
         if ($value != NULL && (in_array($value, $valid_radio_buttons_age) || in_array($value, $valid_radio_buttons_recommendation))){
@@ -68,7 +68,7 @@
     All options in the gender group were tested to ensure they are allowed to be passed through
     A value was changed in inspect element to make sure that this function rejected any ones that are not in the array
     */
-    function validate_options($value){
+    function validateOptions($value){
         $valid_options_gender = array("male", "female", "nonbinary", "genderfluid", "agender", "other");
         if ($value != NULL && in_array($value, $valid_options_gender)){
             return TRUE;
@@ -88,7 +88,7 @@
     213$a
     $a
     */
-    function validate_numbers($value){
+    function validateNumbers($value){
         if (ctype_digit($value)){
             return TRUE;
         } else {
@@ -104,7 +104,7 @@
     No input: This input was tested to ensure that an empty answer does not get through
     "Feedback": This input was tested to ensure that a non-empty answer can get through
     */
-    function validate_textarea($value){
+    function validateTextarea($value){
         if ($value != NULL){
             return TRUE;
         } else {
@@ -115,7 +115,7 @@
     /*
     Sanitizes an email with the filter_var function and the FILTER_SANITIZE_EMAIL filter.
     */
-    function sanitize_email($email){
+    function sanitizeEmail($email){
         $sanitized_email = filter_var($email, FILTER_SANITIZE_EMAIL);
         return $sanitized_email;
     }
@@ -123,7 +123,7 @@
     /*
     Sanitizes a radio button value with the filter_var function and the FILTER_SANITIZE_STRING filter. Returns the sanitized value.
     */
-    function sanitize_radio_buttons($value){
+    function sanitizeRadioButtons($value){
         $sanitized_radio_button = filter_var($value, FILTER_SANITIZE_STRING);
         return $sanitized_radio_button;
     }
@@ -131,7 +131,7 @@
     /*
     Sanitizes an option value with the filter_var function and the FILTER_SANITIZE_STRING filter. Returns the sanitized value.
     */
-    function sanitize_options($value){
+    function sanitizeOptions($value){
         $sanitized_option = filter_var($value, FILTER_SANITIZE_STRING);
         return $sanitized_option;
     }
@@ -139,7 +139,7 @@
     /*
     Sanitizes a number with the filter_var function and the FILTER_SANITIZE_NUMBER_INT filter. Returns the sanitized number.
     */
-    function sanitize_numbers($value){
+    function sanitizeNumbers($value){
         $sanitized_number = filter_var($value, FILTER_SANITIZE_NUMBER_INT);
         return $sanitized_number;
     }
@@ -147,46 +147,46 @@
     /*
     Sanitizes text with the filter_var function and the FILTER_SANITIZE_STRING filter. Returns the sanitized text.
     */
-    function sanitize_text($value){
+    function sanitizeText($value){
         $sanitized_text = filter_var($value, FILTER_SANITIZE_STRING);
         return $sanitized_text;
     }
 
-    $valid_password = check_password($global_password);
+    $valid_password = checkPassword($global_password);
 
     /*
     Uses if statements to check validation, and then calls sanitization functions for all data if validation checks passed.
     */
-    function sanitize_all_data(){
+    function sanitizeAllData(){
         $data = array();
 
-        if (validate_email($_POST["email"]) == TRUE){
-            $sanitized_email = sanitize_email($_POST["email"]);
+        if (validateEmail($_POST["email"]) == TRUE){
+            $sanitized_email = sanitizeEmail($_POST["email"]);
             $data["email"] = $sanitized_email;
             # echo $sanitized_email;
         }
-        if(validate_radio_buttons($_POST["age"]) == TRUE){
-            $sanitized_age = sanitize_radio_buttons($_POST["age"]);
+        if(validateRadioButtons($_POST["age"]) == TRUE){
+            $sanitized_age = sanitizeRadioButtons($_POST["age"]);
             $data["age"] = $sanitized_age;
             # echo $sanitized_age;
         }
-        if (validate_radio_buttons($_POST["recommendation"]) == TRUE){
-            $sanitized_recommendation = sanitize_radio_buttons($_POST["recommendation"]);
+        if (validateRadioButtons($_POST["recommendation"]) == TRUE){
+            $sanitized_recommendation = sanitizeRadioButtons($_POST["recommendation"]);
             $data["recommendation"] = $sanitized_recommendation;
             # echo $sanitized_recommendation;
         }
-        if (validate_options($_POST["gender"]) == TRUE){
-            $sanitized_gender = sanitize_options($_POST["gender"]);
+        if (validateOptions($_POST["gender"]) == TRUE){
+            $sanitized_gender = sanitizeOptions($_POST["gender"]);
             $data["gender"] = $sanitized_gender;
             # echo $sanitized_gender;
         }
-        if (validate_numbers($_POST["times-purchased"]) == TRUE){
-            $sanitized_times_purchased = sanitize_numbers($_POST["times-purchased"]);
+        if (validateNumbers($_POST["times-purchased"]) == TRUE){
+            $sanitized_times_purchased = sanitizeNumbers($_POST["times-purchased"]);
             $data["times_purchased"] = $sanitized_times_purchased;
             # echo $sanitized_times_purchased;
         }
-        if(validate_textarea($_POST["feedback"]) == TRUE){
-            $sanitized_feedback = sanitize_text($_POST["feedback"]);
+        if(validateTextarea($_POST["feedback"]) == TRUE){
+            $sanitized_feedback = sanitizeText($_POST["feedback"]);
             $data["feedback"] = $sanitized_feedback;
             # echo $sanitized_feedback;
         }

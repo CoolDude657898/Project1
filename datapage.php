@@ -9,6 +9,16 @@
 
     <body>
         <?php
+            /*
+            Author: Michael Meacham
+            Email: mmeacha5@genesee.edu
+
+            This file displays the information gathered from the survey database in a webpage
+            */
+
+            /*
+            This function displays the total amount of people in each gender
+            */
             function displayGenderTotals($gender_array){
                 $male_total = 0;
                 $female_total = 0;
@@ -47,6 +57,9 @@
                 echo "<p>Other: $other_total</p>\n";
             }
 
+            /*
+            This function displays the total amount of people in each age range
+            */
             function displayAgeTotals($age_array){
                 $age_group_totals_array = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
@@ -89,6 +102,9 @@
                 }
             }
 
+            /*
+            This function displays the average amount of times people have purchased pepsi in the last 6 months
+            */
             function displayAverageTimesPurchased($times_purchased_array){
                 $total_times_purchased = 0;
                 $amount_of_data = count($times_purchased_array);
@@ -103,6 +119,9 @@
                 echo "<p>Average times purchased within last 6 months: $average_times_purchased</p>";
             }
 
+            /*
+            This function displays the totals for every possible recommendation selection option
+            */
             function displayRecommendationTotals($recommendation_array){
                 echo "<p>Recommendation totals:\n";
                 $recommendation_totals_array = array(0, 0, 0, 0, 0);
@@ -128,6 +147,9 @@
                 }
             }
 
+            /*
+            This function displays 3 random feedbacks or displays all feedbacks if there are less than 3
+            */
             function displayRandomFeedback($feedback_array){
                 if(count($feedback_array) <= 3){
                     echo "<p>Additional feedback: </p>";
@@ -146,6 +168,9 @@
                 }
             }
 
+            /*
+            This function displays 3 random emails or displays all emails if there are less than 3
+            */
             function displayRandomEmails($email_array){
                 if(count($email_array) <= 3){
                     echo "<p>Emails used in survey: </p>";
@@ -163,7 +188,10 @@
                     echo "<p>$email_three\n</p>";
                 }
             }
-
+            
+            /*
+            This function displays all data from the pepsi survey database
+            */
             function displayData(){
                 require('dbconfig.php');
                 $db = connectDB();
